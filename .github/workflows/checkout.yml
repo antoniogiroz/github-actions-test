@@ -1,0 +1,23 @@
+name: Checkout Action
+
+on: [push]
+
+jobs:
+  run-checkout-action:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: List files
+        run: |
+          pwd
+          ls -la
+
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: List files after checkout
+        run: |
+          pwd
+          ls -la
