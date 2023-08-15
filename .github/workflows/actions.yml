@@ -1,0 +1,19 @@
+# This workflow show how to use a GitHub Action
+# And print how many time it took to run the action
+# https://github.com/actions/hello-world-javascript-action
+name: Actions Workflow
+
+on: [push]
+
+jobs:
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simple JS Action
+        id: greet
+        uses: actions/hello-world-javascript-action@v1
+        with:
+          who-to-greet: "Antonio Giroz"
+
+      - name: Log Greeting Time
+        run: echo "The time was ${{ steps.greet.outputs.time }}"
