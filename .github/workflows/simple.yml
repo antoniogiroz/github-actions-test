@@ -1,0 +1,23 @@
+# Name of the workflow
+name: Shell Commands
+
+# When to run the action. Examples: [push, pull_request, ...]
+on: [push]
+
+# Jobs to run in the workflow
+jobs:
+  # Name of the job. Could be anything with no spaces
+  run-shell-command:
+    # Type of machine to run the job on
+    runs-on: ubuntu-latest
+    # Steps to run in the job
+    steps:
+      # Name of the step
+      - name: echo a string
+        # Command to run in the step
+        run: echo "Hello World"
+
+      - name: multiline script
+        run: |
+          node -v
+          npm -v
