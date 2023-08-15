@@ -13,11 +13,18 @@ jobs:
     # Steps to run in the job
     steps:
       # Name of the step
-      - name: echo a string
+      - name: Echo a string
         # Command to run in the step
         run: echo "Hello World"
 
-      - name: multiline script
+      - name: Multiline script
         run: |
           node -v
           npm -v
+
+      - name: Python command
+        run: |
+          import platform
+          print(platform.processor())
+        # Specify a different shell to run the command in (default: bash)
+        shell: python
