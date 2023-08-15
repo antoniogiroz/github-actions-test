@@ -32,6 +32,8 @@ jobs:
   # Test running commands in a different shell. In windows, the default shell is PowerShell
   run-windows-command:
     runs-on: windows-latest
+    # Jobs depend on each other. This job depends on the previous job
+    needs: run-shell-command
     steps:
       - name: Directory PowerShell
         run: Get-Location
