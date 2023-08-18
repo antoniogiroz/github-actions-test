@@ -2,6 +2,7 @@
 name: Shell Commands
 
 # When to run the action. Examples: [push, pull_request, ...]
+# https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
 on: [push]
 
 # Jobs to run in the workflow

@@ -1,0 +1,23 @@
+# This workflow show how to use a more grainular event type to trigger a workflow.
+name: Actions Workflow
+
+# For a more granular event type, use the obejct notation and specify the Activity Type for the event
+on:
+  push:
+  pull_request:
+    types: [opened, assigned, reopened, closed]
+
+jobs:
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print
+        run: |
+          pwd
+          ls -la
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+          echo "{{ github.token }}"
+          git clone git@github:$GITHUB_REPOSITORY
+          git checkout $GITHUB_SHA
